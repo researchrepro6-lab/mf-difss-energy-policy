@@ -1,0 +1,10 @@
+# Python 3.10 or newer (tested on Python 3.12). Install with:
+#   python -m pip install -r requirements.txt
+numpy>=1.26
+pandas>=2.2
+scipy>=1.11
+matplotlib>=3.8
+openpyxl>=3.1      # reads the .xlsx source files
+xlrd>=2.0.1        # reads the World Bank CO2 .xls source file
+pillow>=10.0       # writes the 600-dpi PNG figures
+pytest>=7.0        # unit tests (optional)
