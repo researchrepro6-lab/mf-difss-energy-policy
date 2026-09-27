@@ -1,0 +1,66 @@
+%% Flowchart of the proposed procedure (companion to Algorithm 1).
+\documentclass[border=3pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,positioning,shapes.geometric,shapes.misc,shadows.blur}
+\input{icons}
+\definecolor{cData}{HTML}{16877F}
+\definecolor{cProc}{HTML}{3B5BA5}
+\definecolor{cWeight}{HTML}{D08414}
+\definecolor{cRank}{HTML}{2E8B57}
+\definecolor{cDec}{HTML}{C0503F}
+\definecolor{cInk}{HTML}{2D3748}
+\newcommand{\figtiny}{\fontsize{6}{7}\selectfont}
+\begin{document}
+\sffamily\hyphenpenalty=10000
+\begin{tikzpicture}[font=\sffamily\scriptsize, text=cInk, >={Stealth[length=5pt,width=4pt]},
+  shadow/.style={blur shadow={shadow blur steps=5, shadow xshift=0.5pt, shadow yshift=-0.8pt, shadow opacity=16}},
+  box/.style={rectangle, rounded corners=4pt, draw=#1, line width=0.8pt, fill=#1!7, align=center,
+              text width=3.05cm, minimum height=1.15cm, inner sep=3pt, shadow},
+  term/.style={rounded rectangle, draw=#1, line width=0.9pt, fill=#1!15, align=center, text width=2.7cm,
+               minimum height=1.0cm, inner sep=3pt, shadow, font=\sffamily\bfseries\scriptsize},
+  dec/.style={diamond, aspect=1.9, draw=cDec, line width=0.9pt, fill=cDec!8, align=center, inner sep=0.5pt,
+              text width=2.05cm, shadow, font=\sffamily\scriptsize},
+  line/.style={->, line width=1pt, color=black!60},
+  lab/.style={font=\sffamily\bfseries\figtiny, text=#1, fill=white, inner sep=1pt},
+  stage/.style={font=\sffamily\bfseries\scriptsize, text=#1, anchor=west},
+]
+% ---------------------------------------------------------------- stage labels
+\node[stage=cData] at (0,6.55) {A\;\; Orthopair construction};
+\node[stage=cProc] at (0,4.62) {B\;\; Criterion-wise temporal reduction (repeat for $j=1,\dots,n$)};
+\node[stage=cRank] at (0,1.05) {C\;\; Aggregation across criteria and ranking};
+% ---------------------------------------------------------------- row A
+\node[term=cData] (start) at (1.55,5.55) {Start\\[1pt]\mdseries raw values \mbox{$x_{ij}(t)$, $t\in T_j$}};
+\node[box=cData] (norm) at (5.60,5.55) {Goalpost normalisation\\ $z_{ij}(t)$ on $[L_j,U_j]$ with membership floor $\varepsilon$};
+\node[box=cData] (hes) at (9.75,5.55) {Evidence-based hesitancy $h_{ij}(t)$: sub-indicator disagreement, volatility};
+\node[box=cData] (orth) at (13.90,5.55) {Orthopairs\\ \mbox{$\alpha_{ij}(t)=(\mu_{ij}(t),\nu_{ij}(t))$}};
+\draw[line] (start) -- (norm); \draw[line] (norm) -- (hes); \draw[line] (hes) -- (orth);
+% ---------------------------------------------------------------- row B
+\node[dec] (d1) at (13.90,2.95) {\mbox{$p_j>\theta$ and}\\ \mbox{$D_j>0$\,?}};
+\node[box=cWeight] (ent) at (9.75,3.55) {Dispersion entropy $H_j(t)$;\\ \mbox{$w^{(j)}_t=(1-H_j(t))/D_j$}};
+\node[box=cWeight] (uni) at (9.75,2.10) {Sparse fallback: uniform\\ weights \mbox{$w^{(j)}_t=1/p_j$}};
+\node[box=cProc] (red) at (5.60,2.85) {IFWG over the criterion's own periods $T_j$:\\ \mbox{$\beta_{ij}=\mathrm{IFWG}_{w^{(j)}}\{\alpha_{ij}(t)\}$}};
+\node[dec, text width=1.75cm] (d2) at (1.55,2.85) {All $n$ criteria reduced?};
+\draw[line] (orth) -- (d1);
+\coordinate (split) at (12.25,2.95);
+\draw[line, -] (d1.west) -- (split);
+\draw[line] (split) |- (ent.east) node[lab=cRank, pos=0.30, right] {yes};
+\draw[line] (split) |- (uni.east) node[lab=cDec, pos=0.30, right] {no};
+\draw[line] (ent.west) -- ++(-0.35,0) |- (red.east);
+\draw[line] (uni.west) -- ++(-0.35,0) |- (red.east);
+\draw[line] (red) -- (d2);
+\draw[line, dashed, color=cDec!80] (d2.north) -- (1.55,4.32) -- (15.80,4.32) |- (d1.east);
+\node[lab=cDec] at (4.2,4.32) {no: next criterion $j+1$};
+% ---------------------------------------------------------------- row C
+\node[box=cWeight] (cw) at (1.55,0.0) {Criterion weights from the dispersion entropy of $S(\beta_{ij})$: $\omega_j$};
+\node[box=cProc, text width=3.35cm] (agg) at (5.60,0.0) {IFWG across criteria:\\ \mbox{$\gamma_i=\mathrm{IFWG}_\omega(\beta_{i1},\dots,\beta_{in})$}};
+\node[box=cRank] (rank) at (9.75,0.0) {Score $S(\gamma_i)$, ties broken by $A(\gamma_i)$; rank the countries};
+\node[term=cRank] (end) at (13.90,0.0) {End\\[1pt]\mdseries ranking, then stability and validation checks};
+\draw[line] (d2.south) -- (cw.north) node[lab=cRank, midway, right] {yes};
+\draw[line] (cw) -- (agg); \draw[line] (agg) -- (rank); \draw[line] (rank) -- (end);
+% ---------------------------------------------------------------- icons
+\foreach \n/\ic/\c in {norm/gauge/cData, ent/balance/cWeight, red/calendar/cProc, cw/balance/cWeight, rank/podium/cRank}{
+  \node[circle, fill=white, draw=\c, line width=0.7pt, minimum size=0.62cm, inner sep=0pt] at (\n.north west) {};
+  \pic[scale=0.42] at (\n.north west) {\ic=\c};}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,138 @@
+%% Simple vector icons drawn with TikZ primitives (original artwork, no external icon set).
+%% Each icon fits roughly in [-0.5,0.5]^2; use  \pic[scale=..] at (x,y) {name=colour};
+\tikzset{
+  ic/.style={line width=0.6pt, line cap=round, line join=round},
+  % ---- clipboard / survey
+  pics/survey/.style={code={
+    \draw[ic,#1,fill=#1!10,rounded corners=1.5pt] (-0.34,-0.46) rectangle (0.34,0.40);
+    \draw[ic,#1,fill=#1!60,rounded corners=1pt] (-0.13,0.34) rectangle (0.13,0.48);
+    \foreach \y in {0.18,-0.04,-0.26}{
+      \draw[ic,#1] (-0.24,\y) -- (-0.18,\y-0.05) -- (-0.08,\y+0.06);
+      \draw[ic,#1!70] (0.0,\y) -- (0.24,\y);}
+  }},
+  % ---- wind turbine
+  pics/turbine/.style={code={
+    \fill[#1!70] (-0.035,-0.5) -- (0.035,-0.5) -- (0.018,0.12) -- (-0.018,0.12) -- cycle;
+    \foreach \a in {90,210,330}{
+      \fill[#1,rotate around={\a:(0,0.14)}] (0,0.14) .. controls (0.05,0.24) and (0.04,0.40) .. (0,0.48)
+            .. controls (-0.025,0.40) and (-0.03,0.24) .. (0,0.14);}
+    \fill[white] (0,0.14) circle (0.035); \draw[ic,#1] (0,0.14) circle (0.035);
+    \draw[ic,#1!60] (-0.3,-0.5) -- (0.3,-0.5);
+  }},
+  % ---- solar panel with sun
+  pics/solar/.style={code={
+    \fill[#1!15,draw=#1,ic] (-0.42,-0.30) -- (0.22,-0.30) -- (0.38,0.06) -- (-0.26,0.06) -- cycle;
+    \foreach \t in {0.25,0.5,0.75}{
+      \draw[#1,line width=0.4pt] ($(-0.42,-0.30)!\t!(0.22,-0.30)$) -- ($(-0.26,0.06)!\t!(0.38,0.06)$);}
+    \draw[#1,line width=0.4pt] (-0.34,-0.12) -- (0.30,-0.12);
+    \draw[ic,#1] (-0.05,-0.30) -- (-0.05,-0.46) (-0.18,-0.46) -- (0.08,-0.46);
+    \fill[orange!90!yellow] (0.30,0.34) circle (0.09);
+    \foreach \a in {0,45,...,315}{\draw[orange!90!yellow,line width=0.5pt] ($(0.30,0.34)+(\a:0.12)$) -- ($(0.30,0.34)+(\a:0.17)$);}
+  }},
+  % ---- factory with CO2 cloud
+  pics/factory/.style={code={
+    \fill[#1!15,draw=#1,ic] (-0.46,-0.46) -- (-0.46,-0.06) -- (-0.26,0.06) -- (-0.26,-0.06) -- (-0.06,0.06) -- (-0.06,-0.06)
+          -- (0.14,0.06) -- (0.14,0.26) -- (0.26,0.26) -- (0.26,-0.46) -- cycle;
+    \foreach \x in {-0.38,-0.20,-0.02}{\fill[#1!60] (\x,-0.30) rectangle (\x+0.09,-0.20);}
+    \fill[gray!45] (0.22,0.34) circle (0.07) (0.32,0.40) circle (0.09) (0.44,0.36) circle (0.07) (0.33,0.30) circle (0.07);
+    \node[font=\sffamily\bfseries,scale=0.32,text=black!70] at (0.33,0.36) {CO$_2$};
+    \draw[ic,#1!60] (-0.5,-0.46) -- (0.34,-0.46);
+  }},
+  % ---- calendar
+  pics/calendar/.style={code={
+    \draw[ic,#1,fill=white,rounded corners=1.5pt] (-0.42,-0.42) rectangle (0.42,0.34);
+    \fill[#1,rounded corners=1.5pt] (-0.42,0.16) rectangle (0.42,0.34);
+    \foreach \x in {-0.22,0.22}{\draw[ic,#1!60!black,line width=1pt] (\x,0.28) -- (\x,0.44);}
+    \foreach \i in {0,...,3}{\foreach \j in {0,1,2}{
+      \pgfmathsetmacro{\px}{-0.27+\i*0.18}\pgfmathsetmacro{\py}{0.02-\j*0.15}
+      \fill[#1!30] (\px,\py) circle (0.045);}}
+    \foreach \i/\j in {0/0,2/0,0/2,2/2}{\pgfmathsetmacro{\px}{-0.27+\i*0.18}\pgfmathsetmacro{\py}{0.02-\j*0.15}
+      \fill[#1] (\px,\py) circle (0.05);}
+  }},
+  % ---- gauge (normalisation)
+  pics/gauge/.style={code={
+    \fill[#1!12] (-0.44,-0.18) arc (180:0:0.44) -- cycle;
+    \draw[ic,#1,line width=1.4pt] (-0.44,-0.18) arc (180:0:0.44);
+    \foreach \a in {180,150,...,0}{\draw[#1,line width=0.5pt] ($(0,-0.18)+(\a:0.34)$) -- ($(0,-0.18)+(\a:0.42)$);}
+    \draw[ic,black!75,line width=0.9pt] (0,-0.18) -- ++(55:0.34);
+    \fill[black!75] (0,-0.18) circle (0.05);
+    \node[font=\sffamily,scale=0.35] at (-0.38,-0.30) {0}; \node[font=\sffamily,scale=0.35] at (0.38,-0.30) {1};
+  }},
+  % ---- balance scale (weights)
+  pics/balance/.style={code={
+    \draw[ic,#1,line width=1pt] (0,-0.42) -- (0,0.34); \draw[ic,#1,line width=1pt] (-0.18,-0.44) -- (0.18,-0.44);
+    \draw[ic,#1,line width=1pt,rotate around={-8:(0,0.28)}] (-0.40,0.28) -- (0.40,0.28);
+    \fill[#1] (0,0.34) circle (0.045);
+    \begin{scope}[rotate around={-8:(0,0.28)}]
+      \draw[ic,#1] (-0.40,0.28) -- (-0.50,0.02) (-0.40,0.28) -- (-0.30,0.02);
+      \fill[#1!30,draw=#1,ic] (-0.52,0.02) arc (180:360:0.12 and 0.07) -- cycle;
+      \draw[ic,#1] (0.40,0.28) -- (0.30,0.02) (0.40,0.28) -- (0.50,0.02);
+      \fill[#1!30,draw=#1,ic] (0.28,0.02) arc (180:360:0.12 and 0.07) -- cycle;
+    \end{scope}
+  }},
+  % ---- podium
+  pics/podium/.style={code={
+    \fill[#1] (-0.14,-0.44) rectangle (0.14,0.10); \fill[#1!65] (-0.44,-0.44) rectangle (-0.14,-0.08);
+    \fill[#1!40] (0.14,-0.44) rectangle (0.44,-0.18);
+    \node[font=\sffamily\bfseries,white,scale=0.55] at (0,-0.10) {1};
+    \node[font=\sffamily\bfseries,white,scale=0.5] at (-0.29,-0.25) {2};
+    \node[font=\sffamily\bfseries,white,scale=0.5] at (0.29,-0.31) {3};
+    \fill[orange!90!yellow] (0,0.30) -- (0.045,0.22) -- (0.13,0.21) -- (0.065,0.15) -- (0.08,0.06) -- (0,0.105)
+          -- (-0.08,0.06) -- (-0.065,0.15) -- (-0.13,0.21) -- (-0.045,0.22) -- cycle;
+  }},
+  % ---- globe
+  pics/globe/.style={code={
+    \fill[#1!12] (0,0) circle (0.44); \draw[ic,#1] (0,0) circle (0.44);
+    \draw[ic,#1] (0,-0.44) arc (-90:90:0.18 and 0.44) (0,-0.44) arc (270:90:0.18 and 0.44) (0,-0.44) -- (0,0.44);
+    \draw[ic,#1] (-0.44,0) -- (0.44,0); \draw[ic,#1] (-0.39,0.2) -- (0.39,0.2) (-0.39,-0.2) -- (0.39,-0.2);
+  }},
+  % ---- shield with check
+  pics/shield/.style={code={
+    \fill[#1!15,draw=#1,ic] (0,0.46) -- (0.38,0.32) -- (0.36,-0.05) .. controls (0.30,-0.30) and (0.12,-0.40) .. (0,-0.47)
+          .. controls (-0.12,-0.40) and (-0.30,-0.30) .. (-0.36,-0.05) -- (-0.38,0.32) -- cycle;
+    \draw[ic,#1,line width=1.3pt] (-0.16,0.0) -- (-0.04,-0.13) -- (0.18,0.14);
+  }},
+  % ---- magnifier
+  pics/magnifier/.style={code={
+    \fill[#1!12] (-0.08,0.08) circle (0.28); \draw[ic,#1,line width=1.3pt] (-0.08,0.08) circle (0.28);
+    \draw[#1,line width=3pt,line cap=round] (0.13,-0.13) -- (0.40,-0.40);
+    \draw[ic,#1!70] (-0.22,0.02) -- (-0.14,0.14) -- (-0.04,0.06) -- (0.06,0.20);
+  }},
+  % ---- dice
+  pics/dice/.style={code={
+    \fill[#1!12,draw=#1,ic,rounded corners=3pt] (-0.40,-0.40) rectangle (0.40,0.40);
+    \foreach \p in {(-0.2,0.2),(0.2,0.2),(0,0),(-0.2,-0.2),(0.2,-0.2)}{\fill[#1] \p circle (0.065);}
+  }},
+  % ---- target
+  pics/target/.style={code={
+    \fill[#1!12,draw=#1,ic] (0,0) circle (0.44); \fill[#1!35,draw=#1,ic] (0,0) circle (0.31);
+    \fill[#1!12,draw=#1,ic] (0,0) circle (0.18);
+    \fill[#1] (0,0) circle (0.07);
+    \draw[ic,black!75,line width=0.9pt,-{Stealth[length=3pt]}] (0.46,0.46) -- (0.06,0.06);
+  }},
+  % ---- light bulb
+  pics/bulb/.style={code={
+    \fill[#1!15,draw=#1,ic] (-0.10,-0.18) .. controls (-0.12,-0.02) and (-0.28,0.04) .. (-0.28,0.18) arc (180:0:0.28)
+          .. controls (0.28,0.04) and (0.12,-0.02) .. (0.10,-0.18) -- cycle;
+    \fill[#1!70] (-0.11,-0.22) rectangle (0.11,-0.30); \fill[#1!70] (-0.09,-0.33) rectangle (0.09,-0.40);
+    \draw[ic,#1] (-0.06,-0.18) -- (-0.04,0.10) -- (0,0.04) -- (0.04,0.10) -- (0.06,-0.18);
+    \foreach \a in {20,55,90,125,160}{\draw[ic,orange!90!yellow] ($(0,0.18)+(\a:0.36)$) -- ($(0,0.18)+(\a:0.46)$);}
+  }},
+  % ---- document (literature)
+  pics/document/.style={code={
+    \fill[white,draw=#1,ic] (-0.32,-0.44) -- (-0.32,0.44) -- (0.16,0.44) -- (0.32,0.28) -- (0.32,-0.44) -- cycle;
+    \fill[#1!30,draw=#1,ic] (0.16,0.44) -- (0.16,0.28) -- (0.32,0.28) -- cycle;
+    \foreach \y in {0.22,0.08,-0.06,-0.20,-0.34}{\draw[ic,#1!70] (-0.22,\y) -- (0.22,\y);}
+  }},
+  % ---- speech bubble with question mark
+  pics/question/.style={code={
+    \fill[#1!15,draw=#1,ic,rounded corners=4pt] (-0.44,-0.22) rectangle (0.44,0.42);
+    \fill[#1!15,draw=#1,ic] (-0.20,-0.215) -- (-0.30,-0.44) -- (-0.02,-0.215);
+    \node[font=\sffamily\bfseries,text=#1,scale=0.9] at (0,0.10) {?};
+  }},
+  % ---- gear
+  pics/gear/.style={code={
+    \foreach \a in {0,45,...,315}{\fill[#1,rotate=\a] (-0.07,0.30) rectangle (0.07,0.44);}
+    \fill[#1] (0,0) circle (0.33); \fill[white] (0,0) circle (0.13);
+  }},
+}

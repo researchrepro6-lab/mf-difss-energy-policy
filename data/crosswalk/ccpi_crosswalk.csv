@@ -1,0 +1,121 @@
+edition,rank,country,ISO3
+2024,4,Denmark,DNK
+2023,4,Denmark,DNK
+2024,5,Estonia,EST
+2023,5,Sweden,SWE
+2024,6,Philippines,PHL
+2023,6,Chile,CHL
+2024,7,India,IND
+2023,7,Morocco,MAR
+2024,8,Netherlands,NLD
+2023,8,India,IND
+2024,9,Morocco,MAR
+2023,9,Estonia,EST
+2024,10,Sweden,SWE
+2023,10,Norway,NOR
+2024,11,Chile,CHL
+2023,11,United Kingdom,GBR
+2024,12,Norway,NOR
+2023,12,Philippines,PHL
+2024,13,Portugal,PRT
+2023,13,Netherlands,NLD
+2024,14,Germany,DEU
+2023,14,Portugal,PRT
+2024,15,Luxembourg,LUX
+2023,15,Finland,FIN
+2024,16,European Union,EU
+2023,16,Germany,DEU
+2024,17,Nigeria,NGA
+2023,17,Luxembourg,LUX
+2024,18,Spain,ESP
+2023,18,Malta,MLT
+2024,19,Lithuania,LTU
+2023,19,European Union,EU
+2024,20,United Kingdom,GBR
+2023,20,Egypt,EGY
+2024,21,Switzerland,CHE
+2023,21,Lithuania,LTU
+2024,22,Egypt,EGY
+2023,22,Switzerland,CHE
+2024,23,Brazil,BRA
+2023,23,Spain,ESP
+2024,24,Romania,ROU
+2023,24,Greece,GRC
+2024,25,Thailand,THA
+2023,25,Latvia,LVA
+2024,26,Finland,FIN
+2023,26,Indonesia,IDN
+2024,27,Vietnam,VNM
+2023,27,Colombia,COL
+2024,28,Greece,GRC
+2023,28,France,FRA
+2024,29,Malta,MLT
+2023,29,Italy,ITA
+2024,30,Pakistan,PAK
+2023,30,Croatia,HRV
+2024,31,Colombia,COL
+2023,31,Mexico,MEX
+2024,32,Austria,AUT
+2023,32,Austria,AUT
+2024,33,Latvia,LVA
+2023,33,New Zealand,NZL
+2024,34,New Zealand,NZL
+2023,34,Slovak Republic,SVK
+2024,35,Croatia,HRV
+2023,35,Cyprus,CYP
+2024,36,Indonesia,IDN
+2023,36,Bulgaria,BGR
+2024,37,France,FRA
+2023,37,Ireland,IRL
+2024,38,Mexico,MEX
+2023,38,Brazil,BRA
+2024,39,Belgium,BEL
+2023,39,Belgium,BEL
+2024,40,Slovak Republic,SVK
+2023,40,Vietnam,VNM
+2024,41,Slovenia,SVN
+2023,41,Slovenia,SVN
+2024,42,Cyprus,CYP
+2023,42,Thailand,THA
+2024,43,Ireland,IRL
+2023,43,Romania,ROU
+2024,44,Italy,ITA
+2023,44,South Africa,ZAF
+2024,45,South Africa,ZAF
+2023,45,Czech Republic,CZE
+2024,46,Bulgaria,BGR
+2023,46,Belarus,BLR
+2024,47,Belarus,BLR
+2023,47,Turkey,TUR
+2024,48,Uzbekistan,UZB
+2023,48,Algeria,DZA
+2024,49,Hungary,HUN
+2023,49,Argentina,ARG
+2024,50,Australia,AUS
+2023,50,Japan,JPN
+2024,51,China,CHN
+2023,51,China,CHN
+2024,52,Czech Republic,CZE
+2023,52,United States,USA
+2024,53,Argentina,ARG
+2023,53,Hungary,HUN
+2024,54,Algeria,DZA
+2023,54,Poland,POL
+2024,55,Poland,POL
+2023,55,Australia,AUS
+2024,56,Turkey,TUR
+2023,56,Malaysia,MYS
+2024,57,United States,USA
+2023,57,Taiwan,TWN
+2024,58,Japan,JPN
+2023,58,Canada,CAN
+2024,59,Malaysia,MYS
+2023,59,Russia,RUS
+2024,60,Kazakhstan,KAZ
+2023,60,South Korea,KOR
+2024,61,Taiwan,TWN
+2023,61,Kazakhstan,KAZ
+2024,62,Canada,CAN
+2023,62,Saudi Arabia,SAU
+2024,63,Russia,RUS
+2023,63,Iran,IRN
