@@ -1,0 +1,4 @@
+normalisation,loo_mean_pair_reversal,loo_max_pair_reversal,loo_max_rank_shift,loo_runs_top10_order_changed,dominated_pair_reversal,dominated_max_rank_shift,dominated_rank,dominated_pair_reversal_fixed_weights,dominated_max_rank_shift_fixed_weights
+Goalpost normalisation (primary),0.0008461004644210752,0.0037580739870816207,3,0,0.00011566042100393245,1,133,0.0,0
+Per-period min-max,0.0014893503443121764,0.005754550792718732,6,6,0.07610455702058755,38,133,0.03620171177423086,27
+Pooled min-max,0.0008959234150073845,0.0037580739870816207,3,1,0.08119361554476058,40,133,0.0388619014573213,28

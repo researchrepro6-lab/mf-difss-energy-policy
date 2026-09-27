@@ -1,0 +1,26 @@
+\begin{tabular}{lccccccc}
+\toprule
+Alternative specification & $\omega_1$ & $\omega_2$ & $\omega_3$ & $\tau$ & $\rho$ & Top-10 & Bottom-10 \\
+\midrule
+Temporal weights: uniform & 0.405 & 0.568 & 0.027 & 0.957 & 0.997 & 10/10 & 9/10 \\
+Temporal weights: linear recency & 0.380 & 0.590 & 0.030 & 0.886 & 0.980 & 10/10 & 9/10 \\
+Temporal weights: exponential recency (0.8) & 0.394 & 0.576 & 0.030 & 0.913 & 0.987 & 10/10 & 9/10 \\
+Staleness decay, $\lambda=0.10$ & 0.409 & 0.564 & 0.028 & 0.958 & 0.997 & 10/10 & 10/10 \\
+Staleness decay, $\lambda=0.25$ & 0.384 & 0.585 & 0.030 & 0.894 & 0.982 & 10/10 & 9/10 \\
+Staleness decay, $\lambda=0.50$ & 0.364 & 0.604 & 0.033 & 0.819 & 0.950 & 8/10 & 9/10 \\
+Per-period min--max normalisation & 0.432 & 0.536 & 0.032 & 0.985 & 0.999 & 10/10 & 10/10 \\
+Pooled min--max normalisation, 2016--2024 & 0.427 & 0.545 & 0.028 & 0.995 & 1.000 & 10/10 & 10/10 \\
+Membership floor, $\varepsilon=0.001$ & 0.441 & 0.535 & 0.024 & 0.961 & 0.996 & 9/10 & 8/10 \\
+Membership floor, $\varepsilon=0.05$ & 0.391 & 0.577 & 0.032 & 0.922 & 0.987 & 10/10 & 10/10 \\
+Hesitancy scale, $\kappa=0$ (crisp geometric) & 0.432 & 0.548 & 0.019 & 0.984 & 0.999 & 9/10 & 10/10 \\
+Hesitancy scale, $\kappa=0.10$ & 0.430 & 0.549 & 0.022 & 0.991 & 1.000 & 9/10 & 10/10 \\
+Hesitancy scale, $\kappa=0.50$ & 0.414 & 0.549 & 0.037 & 0.975 & 0.999 & 10/10 & 9/10 \\
+Equal criterion weights & 0.333 & 0.333 & 0.333 & 0.949 & 0.996 & 8/10 & 8/10 \\
+Renewable share RE/(RE+fossil), IMF data ($m=130$) & 0.427 & 0.547 & 0.026 & 0.909 & 0.983 & 8/10 & -- \\
+Policy from the RISE 2016 database, $p_1=1$ ($m=106$) & 0.244 & 0.716 & 0.040 & 0.661 & 0.838 & 4/10 & -- \\
+Policy observed annually, 2016--2023 (Data360) & 0.398 & 0.574 & 0.027 & 0.947 & 0.995 & 10/10 & 9/10 \\
+Non-hydro renewable share ($m=129$) & 0.327 & 0.655 & 0.018 & 0.410 & 0.561 & 2/10 & -- \\
+CO$_2$ goalposts $[0,25]$ t per capita & 0.402 & 0.519 & 0.079 & 0.987 & 0.999 & 10/10 & 9/10 \\
+CO$_2$ per capita, log-transformed & 0.363 & 0.469 & 0.168 & 0.921 & 0.992 & 9/10 & 9/10 \\
+\bottomrule
+\end{tabular}

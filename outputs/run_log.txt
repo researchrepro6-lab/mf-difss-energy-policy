@@ -1,0 +1,8 @@
+                                                             stage  countries
+RISE renewable-energy pillar observed in 2015, 2017, 2019 and 2021        140
+       Renewable electricity share complete 2016-2022 (Ember/OWID)        212
+                    CO2 per capita complete 2016-2022 (World Bank)        203
+                                          RISE and renewable share        139
+                                                      RISE and CO2        135
+                Complete-case analytical panel (all three sources)        135
+Done in 81.0s. Outputs in /home/claude/repro/outputs

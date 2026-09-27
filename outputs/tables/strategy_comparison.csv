@@ -1,0 +1,4 @@
+strategy,tau,rho,top10,n_shift5,max_shift,median_shift,enter_top10,leave_top10
+Linear interpolation of the policy criterion,0.9271339347675225,0.9918133292982627,10,48,17,3.0,,
+Common-period alignment,0.9664584779088595,0.9978137571548578,10,9,9,1.0,,
+Omission of the policy criterion,0.6308119361554475,0.8202167458897068,4,108,72,15.5,"Ethiopia; Congo, Dem. Rep.; Nepal; Paraguay; Uganda; Tajikistan",Austria; Denmark; New Zealand; Brazil; Mozambique; Canada

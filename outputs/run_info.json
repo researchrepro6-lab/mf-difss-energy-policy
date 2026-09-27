@@ -1,0 +1,8 @@
+{
+  "python": "3.14.0",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "runtime_seconds": 466.5,
+  "quick": false,
+  "master_seed": 20260923
+}

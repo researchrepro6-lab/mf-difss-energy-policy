@@ -1,0 +1,133 @@
+ISO3,Country,proposed,Linear interpolation of the policy criterion,Common-period alignment,Omission of the policy criterion
+AFG,Afghanistan,38,39,35,12
+AGO,Angola,37,37,38,27
+ALB,Albania,10,7,10,5
+ARE,United Arab Emirates,107,113,109,121
+ARG,Argentina,61,63,62,71
+ARM,Armenia,44,47,42,65
+AUS,Australia,51,55,53,76
+AUT,Austria,1,2,1,19
+AZE,Azerbaijan,112,111,110,109
+BDI,Burundi,68,65,66,24
+BEL,Belgium,40,44,44,78
+BEN,Benin,127,127,127,124
+BFA,Burkina Faso,117,115,116,92
+BGD,Bangladesh,126,125,125,123
+BGR,Bulgaria,54,61,55,86
+BHR,Bahrain,130,131,130,131
+BIH,Bosnia and Herzegovina,58,56,52,64
+BLR,Belarus,111,117,113,120
+BOL,Bolivia,66,68,67,63
+BRA,Brazil,6,6,6,18
+CAN,Canada,9,10,9,29
+CHE,Switzerland,24,14,21,38
+CHL,Chile,25,25,27,45
+CHN,China,95,87,94,68
+CIV,Cote d'Ivoire,110,107,112,73
+CMR,Cameroon,98,92,95,33
+COD,"Congo, Dem. Rep.",26,21,23,2
+COG,"Congo, Rep.",115,110,108,67
+COL,Colombia,27,23,25,30
+CRI,Costa Rica,5,3,4,6
+CZE,Czechia,65,69,65,101
+DEU,Germany,15,20,16,50
+DNK,Denmark,3,4,3,23
+DOM,Dominican Republic,74,84,76,94
+DZA,Algeria,123,124,122,126
+ECU,Ecuador,32,31,33,25
+EGY,"Egypt, Arab Rep.",86,93,88,103
+ERI,Eritrea,124,122,126,111
+ESP,Spain,22,27,24,51
+ETH,Ethiopia,39,30,37,1
+FIN,Finland,16,16,15,44
+FRA,France,55,60,57,81
+GBR,United Kingdom,23,28,26,56
+GEO,Georgia,43,38,41,20
+GHA,Ghana,48,49,47,52
+GIN,Guinea,100,94,96,28
+GRC,Greece,30,36,34,59
+GTM,Guatemala,45,43,45,31
+HND,Honduras,47,46,50,41
+HRV,Croatia,11,13,11,37
+HTI,Haiti,114,108,114,96
+HUN,Hungary,59,66,63,93
+IDN,Indonesia,106,103,102,89
+IND,India,76,76,75,87
+IRL,Ireland,29,34,30,58
+IRN,"Iran, Islamic Rep.",92,97,92,115
+ISR,Israel,99,104,100,116
+ITA,Italy,28,32,28,54
+JAM,Jamaica,87,91,87,99
+JOR,Jordan,73,79,82,98
+JPN,Japan,89,88,89,85
+KAZ,Kazakhstan,97,98,97,102
+KEN,Kenya,71,57,68,15
+KGZ,Kyrgyz Republic,63,53,61,11
+KHM,Cambodia,56,58,56,48
+KOR,"Korea, Rep.",96,99,99,113
+KWT,Kuwait,128,128,128,129
+LAO,Lao PDR,42,41,43,26
+LBN,Lebanon,102,102,106,108
+LBR,Liberia,109,101,117,100
+LKA,Sri Lanka,79,73,79,55
+MAR,Morocco,67,71,69,83
+MDA,Moldova,93,96,93,110
+MDG,Madagascar,50,54,49,53
+MDV,Maldives,116,118,115,117
+MEX,Mexico,90,90,91,84
+MKD,North Macedonia,80,78,80,69
+MLI,Mali,81,82,77,61
+MMR,Myanmar,91,74,86,46
+MNG,Mongolia,121,119,121,107
+MOZ,Mozambique,7,8,7,16
+MRT,Mauritania,57,62,59,70
+MWI,Malawi,64,51,58,13
+MYS,Malaysia,83,85,84,90
+NER,Niger,118,121,119,122
+NGA,Nigeria,101,95,98,79
+NIC,Nicaragua,14,17,14,39
+NLD,Netherlands,84,80,90,74
+NOR,Norway,2,1,2,7
+NPL,Nepal,21,18,20,3
+NZL,New Zealand,4,5,5,17
+OMN,Oman,122,123,123,127
+PAK,Pakistan,70,70,71,66
+PAN,Panama,35,33,36,34
+PER,Peru,31,35,29,40
+PHL,Philippines,78,81,74,77
+PNG,Papua New Guinea,85,89,81,72
+POL,Poland,62,67,64,91
+PRT,Portugal,12,15,13,42
+PRY,Paraguay,20,19,18,4
+QAT,Qatar,125,126,124,128
+ROU,Romania,17,24,17,49
+RUS,Russian Federation,72,75,72,88
+RWA,Rwanda,60,52,60,47
+SAU,Saudi Arabia,131,130,131,130
+SDN,Sudan,82,72,83,35
+SEN,Senegal,105,105,105,95
+SGP,Singapore,108,114,107,118
+SLB,Solomon Islands,129,129,129,125
+SLE,Sierra Leone,49,42,48,21
+SLV,El Salvador,19,22,22,22
+SOM,"Somalia, Fed. Rep.",120,120,120,106
+SVK,Slovak Republic,41,45,40,75
+SWE,Sweden,18,12,19,36
+TCD,Chad,119,116,118,114
+TGO,Togo,77,77,73,80
+THA,Thailand,75,86,78,97
+TJK,Tajikistan,34,29,31,9
+TKM,Turkmenistan,132,132,132,132
+TUN,Tunisia,104,109,103,119
+TUR,Turkiye,33,40,39,60
+TZA,Tanzania,88,83,85,62
+UGA,Uganda,13,11,12,8
+URY,Uruguay,8,9,8,10
+USA,United States,53,59,54,82
+UZB,Uzbekistan,113,112,111,105
+VEN,"Venezuela, RB",69,64,70,32
+VNM,Viet Nam,46,48,46,57
+YEM,"Yemen, Rep.",94,100,101,104
+ZAF,South Africa,103,106,104,112
+ZMB,Zambia,36,26,32,14
+ZWE,Zimbabwe,52,50,51,43
